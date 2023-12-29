@@ -1,0 +1,372 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 70px; /* Adjust this value based on the height of your navbar */
+}
+.container {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    flex: 1;
+    padding: 0 10px;
+}
+
+.obd-instructions {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.column {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+}
+
+.divider {
+    border-left: 1px solid black;
+    height: auto;
+    display: none;
+}
+
+.search-bar input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.dropdown-menus select {
+    width: 30%;
+    padding: 10px;
+    margin: 10px;
+}
+
+#submit-btn {
+    padding: 10px 20px;
+    background-color: lightgrey;
+    color: white;
+    border: none;
+    cursor: not-allowed;
+}
+
+#submit-btn.enabled {
+    background-color: #0047AB;
+    cursor: pointer;
+}
+
+
+.navbar {
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background: #fff; /* Remove transparency */
+    color: #000;
+    z-index: 100; /* Ensure navbar stays on top */
+    top: 0; /* Align navbar to top of page */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; /* Add padding for better edge spacing */
+    height: 70px; /* Adjust height as needed */
+}
+
+.menu-items{
+    order: 2;
+    display: flex;
+    
+}
+.logo {
+    font-size: 2rem; /* Adjust for a more subtle appearance */
+    margin-right: auto; /* Pushes the logo to the left */
+}
+
+.menu-items li{
+    list-style: none;
+    order: 2;
+    margin-left: 3rem;
+    font-size: 1.3rem;
+}
+
+.navbar a{
+    color: #444;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover{
+    color: #117964;
+}
+
+@media (max-width: 768px){
+    .navbar{
+        opacity: 0.95;
+    }
+
+    .navbar-container{
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+  
+    .navbar .menu-items{
+        padding-top: 100px;
+        background: #fff;
+        height: 100vh;
+        max-width: 300px;
+        transform: translateY(70px);
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+        padding-left: 40px;
+        transition: transform 0.5s ease-in-out;
+        box-shadow:  5px 0px 10px 0px #aaa;
+        overflow: scroll;
+    }
+
+    .navbar .menu-items li{
+        margin-bottom: 1.8rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .logo{
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 2.5rem;
+    }
+
+}
+
+.obd-instructions, .obd-info, .search-bar, .dropdown-menus {
+    margin-bottom: 20px; /* Adds a gap between sections */
+}
+
+.codes-section h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.codes-section .note {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.codes-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.codes-list li {
+    margin-bottom: 10px;
+}
+
+.tab-label {
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+}
+
+.tab-label:hover {
+    background-color: #e9e9e9;
+}
+
+.container, .codes-section {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 20px; /* Adds space at the bottom */
+}
+
+.code-info {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: none;
+}
+
+/* Style for checked input to display the information */
+input[type="checkbox"]:checked + label + .code-info {
+    display: block;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 2px solid black;
+    width: 80%;
+    max-width: 600px; 
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: hidden;
+}
+@media (max-width: 768px) {
+    .modal {
+        width: 95%;    /* smaller width on smaller screens */
+    }
+}
+.modal-content {
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Adjust body padding when modal is open */
+body.modal-open {
+    padding-bottom: 100px; /* Extra space for the modal */
+}
+
+.bold, p{
+    font-weight: bold;
+}
+
+.navlogo{
+    height: 4rem;
+    position: relative;
+}
+
+.search-bar, h2{
+    text-decoration: underline;
+}
+
+.modal-content img {
+    max-width: 100%;   /* ensures the image is never wider than the modal */
+    max-height: 400px; /* sets a maximum height for the image */
+    object-fit: contain; /* ensures that the aspect ratio is maintained */
+    margin: auto;       /* centers the image horizontally */
+    display: block;     /* prevents inline behaviors */
+}
+
+
+.site-footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    font-size: 0.8em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-section ul li a:hover {
+    color: #aaa;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #444;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+}
+
+.bx{
+    height: 2rem !important;
+    width: 2rem!important;
+    margin-right: 10px!important;
+    margin-left: 10px!important;
+    margin-top: 10px!important;
+    margin-bottom: 10px!important;
+    border-radius: 50%!important;
+    background-color: #0047AB!important;
+    color: white!important;
+    text-align: center!important;
+    line-height: 2rem!important;
+    vertical-align: middle!important;
+    display: inline-block!important;
+    font-size: 1rem!important;
+    font-weight: bold!important;
+    text-decoration: none!important;
+    transition: background-color 0.3s ease-in-out!important;
+    cursor: pointer!important;
+    outline: none!important;
+}
+
+.hamburger-menu {
+    display: none !important; /* Show hamburger menu */
+    
+}
+
+
+@media (max-width: 765px) {
+    .hamburger-menu {
+        display: block !important; /* Show hamburger menu */
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        text-align: center !important;
+        z-index: 1001; /* Ensure it's above other elements */
+    }
+
+
+    .menu-items {
+        display: none !important; /* Hide menu-items by default */
+        position: absolute;
+        top: 0px; /* Below the navbar */
+        width: 100%; 
+        left: 0;
+        background-color: #fff;
+        align-items: center; 
+        flex-direction: column;
+        text-align: center !important;
+        max-height: 150px !important;
+        padding-left: 130px !important;
+    }
+
+    .menu-items.show {
+        display: flex !important;/* Display menu-items when .show is added */
+    }
+}

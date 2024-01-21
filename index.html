@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Car Detailing</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap' rel='stylesheet'>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" class="main-logo"> 
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <div class="rightnav" id="navLinks">
+            <div class="close-btn" onclick="toggleMenu()">&#10005;</div> 
+            <img src="logo.png" class="menu-logo"> 
+            <a href="#services"><i class='bx bx-store-alt'></i> Services</a>
+            <a href="#contact"><i class='bx bx-phone'></i> Contact Us!</a>
+            <a href="#about"> <i class='bx bx-book-open'></i> About Us</a>
+        </div>
+    </div>
+    
+    <div class="hero">
+        <div>
+            <h1>COMPANY NAME</h1>
+            <p>Excellence in Every Detail</p>
+            <div class="btn-container">
+                <a class="button" href="#services"><i class='bx bx-store-alt'></i> Services We Offer</a>
+                <a class="button" href="#contact"><i class='bx bx-phone'></i> Contact Us</a>
+            </div>
+        </div>
+    </div>
+    <div class="content-wrapper">
+        <div class="text-container">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+    <div class="slideshow-container">
+      
+        <h2 class="slideshow-title">Our Works!</h2> 
+    
+        <div class="slide fade">
+            <img src="cars.JPG" alt="Image 1">
+        </div>
+        <div class="slide fade">
+            <img src="benz.jpg" alt="Image 2">
+        </div>
+        <div class="slide fade">
+            <img src="civic.jpg" alt="Image 3">
+        </div>
+    </div>
+</div>
+    
+<div class="content" id="services">
+    <div class="services-header">
+        <h2>Our Services</h2>
+        <img src="nsx.png" alt="NSX Image" class="rotating-image"/>
+    </div>
+    
+    <div class="service-container">
+        <!-- Trucks/SUVs Card -->
+        <div class="service-card">
+            <h3>Trucks/SUVs</h3>
+            <img src="f150.png" alt="F150 Image" class="rotating-image"/>
+            <div class="package">
+                <h4>Package A - $75</h4>
+                <p>Experience our premium hand wash and dry service, designed specifically for Trucks and SUVs. This package includes:</p>
+                <ul>
+                    <li>Detailed hand washing and drying, ensuring a spotless finish</li>
+                    <li>Thorough window cleaning for crystal clear views</li>
+                    <li>Precise rim cleaning to remove dirt and brake dust</li>
+                    <li>Door jam cleaning for a comprehensive clean</li>
+                    <li>Complete interior vacuuming for a pristine cabin environment</li>
+                </ul>
+            </div>
+            <div class="package">
+                <h4>Package B - $150</h4>
+                <p>Our ultimate care package for Trucks and SUVs. This all-inclusive option offers:</p>
+                <ul>
+                    <li>Deluxe handwash and wax for a protective and radiant finish</li>
+                    <li>Full interior and exterior detailing for a showroom shine</li>
+                    <li>Deep shampoo treatment for carpets and seats, removing stains and odors</li>
+                    <li>Thorough cleaning of floor mats for a fresh interior feel</li>
+                    <li>Custom fragrance application for a pleasant and inviting scent</li>
+                    <li>Engine bay cleaning to maintain a clean and efficient engine</li>
+                </ul>
+            </div>
+            <a href="YOUR_GOOGLE_FORM_LINK" class="inquire-button"><i class='bx bx-phone'></i> Inquire</a>
+        </div>
+
+        <!-- Regular Sized Cars Card -->
+        <div class="service-card">
+            <h3>Regular Sized Cars</h3>
+            <img src="corvette.png" alt="Corvette Image" class="rotating-image"/>
+            <div class="package">
+                <h4>Package A - $55</h4>
+                <p>Our standard package tailored for regular sized vehicles includes:</p>
+                <ul>
+                    <li>Expert hand wash and drying for a flawless exterior</li>
+                    <li>Window cleaning for unobstructed driving views</li>
+                    <li>Rim cleaning to enhance your vehicle's appeal</li>
+                    <li>Careful cleaning of door jams for a detailed finish</li>
+                    <li>Interior vacuuming to maintain a clean and comfortable space</li>
+                </ul>
+            </div>
+            <div class="package">
+                <h4>Package B - $125</h4>
+                <p>Our comprehensive package for regular sized vehicles provides:</p>
+                <ul>
+                    <li>Specialized hand wash and wax for long-lasting shine and protection</li>
+                    <li>Complete interior and exterior detailing for a meticulous clean</li>
+                    <li>Deep shampoo for carpets and seats, ensuring a spotless interior</li>
+                    <li>Thorough cleaning and shampooing of floor mats</li>
+                    <li>Application of a custom fragrance for a refreshing atmosphere</li>
+                    <li>Engine bay cleaning for optimal performance and appearance</li>
+                </ul>
+            </div>
+            <a href="YOUR_GOOGLE_FORM_LINK" class="inquire-button"><i class='bx bx-phone'></i> Inquire</a>
+        </div>
+    </div>
+</div>
+
+    <div class="footer">
+        <p><i class='bx bx-phone'></i> Contact us: (321) 638-7694 | <i class='bx bx-envelope'></i> info@elitecardetailing.com</p>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

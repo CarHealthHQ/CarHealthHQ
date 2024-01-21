@@ -1,0 +1,385 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+@media (max-width: 640px) {
+.slideshow-container {
+max-width: 100%; /* Full width on small screens */
+}
+.slideshow-container img {
+height: auto; /* Adjust height to maintain aspect ratio */
+}
+}
+
+
+.header {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    justify-content: space-between;
+}
+
+.header img {
+    height: 100px; /* Adjust as needed */
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+.rightnav {
+ z-index: 1000;
+}
+
+.rightnav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px; /* Space between links */
+    font-size: 1rem;
+}
+
+.hero {
+    background-image: url('pic2.jpg');
+    height: calc(100vh - 80px); /* Adjust height */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+
+.hero, .content, .footer {
+ z-index: 1; /* Lower z-index than the rightnav */
+ position: relative; /* Needed to make z-index effective */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.9; transform: scale(0.99); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.hero h1, .hero p {
+    font-style: italic; /* Italic font style */
+}
+
+.hero h1, .hero p, .btn-container {
+    opacity: 0; /* Start elements as invisible */
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.hero h1 { animation-delay: 0.5s; }
+.hero p { animation-delay: 1s; }
+.btn-container { animation-delay: 1.5s; }
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.btn-container .button {
+    animation: slideInFromLeft 0.5s ease-out forwards;
+}
+
+.btn-container .button:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.btn-container .button:nth-child(2) {
+    animation-delay: 0.75s;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.button {
+    padding: 16px 30px;
+    font-size: 1rem;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+}
+
+.content {
+    padding: 4rem;
+    text-align: center;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+    .hamburger {
+        display: block;
+    }
+    .rightnav {
+        position: fixed;
+        background-color: black;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s;
+    }
+    .rightnav a {
+        padding: 10px;
+        font-size: 1.2rem;
+        display: block;
+        margin-left: 0; 
+        z-index: 1000; 
+    }
+    .header img {
+        height: 40px; /* Adjust size for mobile */
+    }
+}
+
+.close-btn {
+font-size: 2rem;
+color: white;
+position: absolute;
+top: 20px;
+right: 20px;
+cursor: pointer;
+}
+
+
+
+.package {
+background: #e7e7e7; /* Slightly darker than card background for distinction */
+padding: 15px;
+margin-bottom: 10px;
+border-radius: 5px;
+}
+
+.package h4 {
+margin-top: 0;
+color: #333;
+}
+
+.service-container {
+display: flex;
+justify-content: space-around;
+align-items: stretch; /* Ensures cards stretch to fill the height */
+margin-top: 2rem;
+flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+}
+
+
+.service-card {
+background: #f5f5f5; /* Light grey background, adjust as needed */
+padding: 20px;
+border-radius: 8px;
+width: 45%; /* Adjust based on your preference */
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+flex: 1;
+}
+
+/* Responsive Design for screens smaller than 1214px */
+@media (max-width: 1214px) {
+.service-card {
+flex-basis: 100%; /* Each card takes full width on smaller screens */
+}
+}
+
+.service-card h3 {
+color: #333; /* Dark text color */
+}
+
+.service-card p {
+color: #666; /* Lighter text color */
+}
+
+.inquire-button {
+display: inline-block;
+margin-top: 10px;
+padding: 10px 15px;
+background-color: #007bff; /* Blue, adjust as needed */
+color: white;
+text-decoration: none;
+border-radius: 5px;
+transition: background-color 0.3s;
+}
+
+.inquire-button:hover {
+background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+.services-header {
+display: flex;
+text-align: center;
+align-items: center;
+position: relative;
+left: 43%;
+
+}
+
+.rotating-image {
+width: 100px; /* Adjust the size as needed */
+height: auto;
+margin-left: 10px; /* Adjust if more space is needed */
+animation: rotateImage 10s linear infinite;
+margin-left: 0;
+
+margin-top: 10px; /* Add some space above the image */
+}
+
+@keyframes rotateImage {
+from {
+transform: rotateY(0deg);
+}
+to {
+transform: rotateY(360deg);
+}
+}
+
+/* Styles for screens larger than 1200px */
+@media (min-width: 1200px) {
+.services-header {
+justify-content: flex-start; /* Align to the start on larger screens */
+flex-wrap: nowrap; /* Prevent wrapping */
+
+}
+.rotating-image {
+margin-left: 10px; /* Restore margin left for larger screens */
+margin-top: 0;
+
+
+}
+}
+
+
+@media (min-width: 1000px) {
+.close-btn {
+display: none; /* Hide close button on larger screens */
+}
+}
+
+.slideshow-container {
+flex: 1; /* Allows the slideshow container to grow */
+max-width: 500px;
+margin: 40px auto;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+overflow: hidden;
+}
+
+
+.content-wrapper {
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0; /* Remove any margin */
+padding: 0; /* Remove any padding */
+}
+
+.text-container {
+flex: 1; /* Allows the text container to grow */
+max-width: 40%; /* Limits the width of the text container */
+padding: 15px; /* Adds some padding inside the text container */
+}
+
+.text-container, .slideshow-container {
+margin: 0; /* Remove any margin */
+font-weight: bold; 
+font-size: 20px;
+}
+
+.slideshow-container img {
+width: 100%;
+height: 500px;
+object-fit: cover;
+border-radius: 10px;
+}
+.slide {
+display: none;
+}
+
+.fade {
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+
+.slideshow-title {
+text-align: center;
+margin-bottom: 20px;
+}
+
+
+.header img{
+height: 50px;
+}
+
+
+.main-logo { display: block; }
+.menu-logo { display: none; }
+
+/* On smaller screens, hide the main logo and show the menu logo */
+@media (max-width: 1000px) {
+
+.menu-logo { display: block; }
+}
+
+.package:hover {
+    /* Example animation effects */
+    transform: scale(1.05); /* Slightly increase the size */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add a subtle shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for the effect */
+}
+
+
+@media screen and (max-width: 1000px) {
+    .package.touch-hover {
+        /* Same styles as your hover effect */
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+}
